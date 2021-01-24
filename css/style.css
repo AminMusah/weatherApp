@@ -21,21 +21,15 @@ header {
     position: sticky;
     top: 0;
     background: linear-gradient(to right,#dee7fa,#c5c1ff);
-
 }
 
 h1 {
     letter-spacing: 2px;
-    margin-left: 10px;
+    text-align: center;
     color: #fff;
 }
 
 .submit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 170px;
-    margin: 50px;
     position: sticky;
     top: 40px;
 }
@@ -68,8 +62,6 @@ h1 {
 .bar {
     border: 1px solid #9999;
     position: absolute;
-    bottom: 0;
-    left: -23px;
     width: 190px;
 } 
 
@@ -136,4 +128,74 @@ h1 {
     100% {
         transform: rotateZ(360deg);        
     }
+}
+  
+.container {
+    margin: 50px auto;
+}
+
+.container .search-input {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.container .search-input input {
+    width: 100%;
+    padding: 0 60px 9px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.container .search-input .autoComplete-box {
+    max-height: 280px;
+    padding: 0px;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+}
+
+.container .search-input .autoComplete-box li {
+    width: 100%;
+    list-style: none;
+    padding: 10px 12px;
+    cursor: default;
+    border-radius: 5px;
+    display: none;
+    text-transform: lowercase;
+}
+
+  .container .search-input .autoComplete-box li:hover {
+    background: #efefef;
+}
+
+.container .search-input .icon {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 30px 0 20px;
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  .container .search-input .icon:hover {
+    color: #0984e3;
+}
+
+.container .search-input.active .autoComplete-box {
+    padding: 12px 10px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container .search-input.active li {
+    display: block;
 }
