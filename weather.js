@@ -100,7 +100,11 @@ function showSuggestions(list) {
     suggestion.innerHTML = list
 }
 
-
+search.addEventListener('keyup', e => {
+    if(e.keyCode === 13) {
+        weatherInfo();
+    }
+})
 
 window.addEventListener('load', () => {
     spin.style.display = 'none';
