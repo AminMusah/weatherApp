@@ -9,6 +9,8 @@ const time = document.querySelector('.date');
 const spin = document.querySelector('.fa-spinner');
 const weather = document.querySelector('.weather-info');
 const greetings = document.querySelector('.greetings');
+const start = document.querySelector('.start')
+const container = document.querySelector('.container')
 
 let suggestions = ['Abidjan','ACCRA','Adana','ADDIS ABABA','Adelaide','Agra','Ahmadabad','Aleppo','Alexandria','ALGIERS','Allahabad','ALMATY','AMMAN','Amritsar','ANKARA','Anshan',
 'BAGHDAD','Baku','Bandung','Bangalore','BANGKOK','Baotou','Barcelona','Barquisimeto','Barranquilla','Basrah','BEIJING','BEIRUT','Belem','BELGRADE','Belo Horizonte','Benghazi','Benin','BERLIN','Bhopal','Birmingham','BOGOTA','BRASILIA','BRAZZAVILLE','Brisbane','BUCHAREST','BUDAPEST','BUENOS AIRES','Bursa','Busan',
@@ -39,13 +41,13 @@ let suggestion = document.querySelector('.autoComplete-box');
 let webLink;
  
  // Set input value
-
 inputBox.onkeyup = (event) => {
-    // Get users data
-    let usersData = event.target.value;
+    
+ // Get users data
+let usersData = event.target.value;
  
-    // Init empty table
-    let emptyArr = [];
+// Init empty table
+let emptyArr = [];
  
     // If user data equal to true
     if(usersData) {
@@ -113,7 +115,6 @@ window.addEventListener('load', () => {
 search.addEventListener('click', weatherInfo)
 
 function weatherInfo() {  
-    greetings.style.display = 'none';
     spin.style.display = 'flex';
     spin.style.animation = "spin 1s infinite"
 
@@ -126,11 +127,15 @@ function weatherInfo() {
             let windSpeed = data.wind.speed;
             let humidity = data.main.humidity;
 
-            name.innerHTML = `<i class="fas fa-map-marked-alt"></i> ${cityName}`;
-            temp.innerHTML = `<i class="fas fa-temperature-low"> Temp - ${temperature}&#8451;`;
+            name.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${cityName}`;
+            temp.innerHTML = `${temperature}&#8451;`;
+            temp.style.fontSize = '4rem'
             desc.innerHTML = `<i class="fas fa-cloud"></i> ${description}`;
-            wind.innerHTML = `<i class="fas fa-wind"> wind Speed - ${windSpeed}m/s`;
-            hum.innerHTML = `<i class="fas fa-tint"></i> Humidity - ${humidity}%`;
+            desc.style.fontSize = '1rem'
+            wind.innerHTML = `<i class="fas fa-wind"> ${windSpeed}m/s`;
+            wind.style.fontSize = '1rem'
+            hum.innerHTML = `<i class="fas fa-tint"></i> ${humidity}%`;
+            hum.style.fontSize = '1rem'
             spin.style.display = 'none';
             input.value = '';
             input.focus();
@@ -153,6 +158,11 @@ input.addEventListener('keyup', e => {
     if(e.keyCode === 13) {
         weatherInfo();
     }
+})
+
+start.addEventListener('click', () => {
+    greetings.style.display = 'none';
+    searchInput.style.display = 'block'; 
 })
 
 function save() {

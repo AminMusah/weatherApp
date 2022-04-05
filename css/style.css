@@ -10,23 +10,23 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: 'Pridi', serif;
-    background: linear-gradient(to right,#dee7fa,#c5c1ff);
+    background: #000000;
     overflow-x: hidden;
     color: #080E33;
 }
 
 header {
     width: 100%;
-    height: 50px;
-    position: sticky;
-    top: 0;
-    background: linear-gradient(to right,#dee7fa,#c5c1ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
-    letter-spacing: 2px;
+    letter-spacing: 6px;
     text-align: center;
     color: #fff;
+    margin: 3rem;
 }
 
 .submit {
@@ -45,14 +45,18 @@ h1 {
 }
 
 .greetings {
-    font-weight: bold;
-    margin: 20px;
     text-align: center;
+}
+
+.greetings p{
+    color: #777
 }
 
 .fa-search {
     margin-top: 10px;
     transition: 1s linear;
+    font-size: 16px;
+    color: #777;
 }
 
 .fa-search:hover {
@@ -70,7 +74,7 @@ h1 {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    margin: 50px;
+    color: #e6e6e6;
 }
 
 .weather-info p {
@@ -81,48 +85,51 @@ h1 {
 .fa-bolt {
     margin: 20px;
     font-size: 50px;
-    color: #c5c1ff;
-}
-
-.fa-smile, .fa-heart {
-    color: #777;
+    color:  #6097c2;
 }
 
 .name {
-    margin: 50px;
-    font-size: 50px;
+    margin: 16px;
+    font-size: 1rem;
     width: 100%;
     text-align: center;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
+    color: #fff;
 }
 
 .clouds {
     margin: 50px;
 }
 
+.hum {
+    margin: 40px;
+} 
+
+.wind {
+    margin: 40px;
+}
+
 .desc {
-    margin: 50px;
+    margin: 40px;
 }
 
 .temp {
-    margin: 50px;
-}
-
-.wind {
-    margin: 50px;
-}
-
-.hum {
-    margin: 50px;
+    font-size: 5rem;
+    margin: 40px;
 }
 
 .fa-spinner {
     font-size: 30px;
+    position: absolute;
+    top: 8rem;
 }    
 
 .date {
     font-size: 20px;
+    color: #e6e6e6;
 }
+
+
 
 @keyframes spin {
     100% {
@@ -131,24 +138,22 @@ h1 {
 }
   
 .container {
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .container .search-input {
     position: relative;
     width: 100%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 30px;
+    margin: 20px;
 }
 
 .container .search-input input {
-    width: 100%;
-    padding: 0 60px 9px 20px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 5px;
     outline: none;
     border: none;
+    color: #fff;
 }
 
 .container .search-input .autoComplete-box {
@@ -157,6 +162,7 @@ h1 {
     opacity: 0;
     pointer-events: none;
     overflow-y: auto;
+    color: #fff;
 }
 
 .container .search-input .autoComplete-box li {
@@ -169,14 +175,15 @@ h1 {
     text-transform: lowercase;
 }
 
-  .container .search-input .autoComplete-box li:hover {
-    background: #efefef;
+.container .search-input .autoComplete-box li:hover {
+    background: #111111;
+    color: #999999;
 }
 
 .container .search-input .icon {
     position: absolute;
     top: -5px;
-    right: 0;
+    right: 60px;
     width: 55px;
     height: 55px;
     line-height: 55px;
@@ -186,7 +193,7 @@ h1 {
     cursor: pointer;
     transition: 0.3s;
 }
-  .container .search-input .icon:hover {
+.container .search-input .icon:hover {
     color: #0984e3;
 }
 
@@ -198,4 +205,94 @@ h1 {
 
 .container .search-input.active li {
     display: block;
+}
+
+
+.search-input {
+    display: none;
+}
+
+.start {
+    margin: 3rem;
+    padding: 0.7rem 6rem 0.7rem 6rem;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #6097c2;
+}
+
+.start:hover {
+    transform: 1s ease;
+    background-color: rgb(75, 117, 255);
+}
+
+.menu {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #222222;
+    padding: 5px;
+}
+
+.menu-one {
+    background-color: #999;
+    width: 70%;
+    height: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+.menu-two {
+    background-color: #999;
+    width: 50%;
+    height: 2px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+footer {
+    display: none;
+}
+
+.fa-moon {
+    font-size: 2rem;
+    color: #222222;
+}
+
+@media only screen and (max-width: 600px){
+    footer {
+        position: absolute;
+        bottom: 20px;
+        width: 90%;
+        height: 5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #444444;
+        border: none;
+        background-color: #111111;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+
+    footer i:hover {
+        transition: 1s ease-in-out;
+        transform: scale(1.2);
+        color: rgb(75, 117, 255);
+    }
+
+    .weather-info {
+        margin: 0rem 3rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .weather-info {
+        margin: 0rem 22rem;
+    }
 }
