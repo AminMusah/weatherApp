@@ -226,37 +226,13 @@ h1 {
     background-color: rgb(75, 117, 255);
 }
 
-.menu {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    background-color: #222222;
-    padding: 5px;
-}
-
-.menu-one {
-    background-color: #999;
-    width: 70%;
-    height: 2px;
-    margin-bottom: 2px;
-    margin-left: 5px;
-}
-
-.menu-two {
-    background-color: #999;
-    width: 50%;
-    height: 2px;
-    margin-top: 2px;
-    margin-left: 5px;
-}
-
 footer {
     display: none;
+}
+
+.fa-bars-staggered {
+    font-size: 2rem;
+    color: #222222;
 }
 
 .fa-moon {
@@ -266,8 +242,8 @@ footer {
 
 @media only screen and (max-width: 600px){
     footer {
-        position: absolute;
-        bottom: 20px;
+        position: sticky;
+        bottom: 0.5rem;
         width: 90%;
         height: 5rem;
         display: flex;
