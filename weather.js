@@ -145,6 +145,7 @@ function weatherInfo() {
             
             let date = new Date();
             time.innerHTML = date.toDateString();
+            greetings.style.display = 'none'
             
         })
         .catch(error => alert('Wrong input!'))
@@ -161,7 +162,7 @@ input.addEventListener('keyup', e => {
 })
 
 start.addEventListener('click', () => {
-    greetings.style.display = 'none';
+    greetings.style.visibility = 'hidden';
     searchInput.style.display = 'block'; 
 })
 
